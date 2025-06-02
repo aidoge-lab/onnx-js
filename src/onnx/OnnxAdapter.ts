@@ -19,7 +19,7 @@ import {
 import { IModelAdapter } from '../parser/IModelAdapter';
 import { ParserError, ParserErrorFactory } from '../parser/ParserError';
 import { onnx } from '../generated/onnx_pb';
-import { isDefined, isString, isNumber } from '../utils/TypeUtils';
+import { isDefined } from '../utils/TypeUtils';
 
 /**
  * ONNX to Internal Format Adapter

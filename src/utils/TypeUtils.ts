@@ -113,12 +113,13 @@ export function convertToType(value: unknown, targetType: 'string' | 'number' | 
   switch (targetType) {
     case 'string':
       return String(value);
-    case 'number':
+    case 'number': {
       const num = Number(value);
       if (isNaN(num)) {
         throw new Error(`Cannot convert "${value}" to number`);
       }
       return num;
+    }
     case 'boolean':
       if (typeof value === 'boolean') {
         return value;

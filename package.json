@@ -17,7 +17,8 @@
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",
     "clean": "rimraf dist",
-    "dev": "npm run build:dev"
+    "dev": "npm run build:dev",
+    "setup:ci": "node scripts/setup-ci.mjs"
   },
   "keywords": [
     "onnx",

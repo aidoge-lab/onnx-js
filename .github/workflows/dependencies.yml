@@ -1,0 +1,67 @@
+name: Dependencies Check
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-dependencies:
+    name: Check for Outdated Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for outdated packages
+        run: |
+          echo "## Outdated Dependencies Report" > outdated-report.md
+          echo "" >> outdated-report.md
+          echo "Generated on: $(date)" >> outdated-report.md
+          echo "" >> outdated-report.md
+          
+          if npm outdated > outdated.txt 2>&1; then
+            echo "All dependencies are up to date! 🎉" >> outdated-report.md
+          else
+            echo "### Outdated packages:" >> outdated-report.md
+            echo '```' >> outdated-report.md
+            cat outdated.txt >> outdated-report.md
+            echo '```' >> outdated-report.md
+            echo "" >> outdated-report.md
+            echo "Please consider updating these dependencies." >> outdated-report.md
+          fi
+
+      - name: Check for security vulnerabilities
+        run: |
+          echo "" >> outdated-report.md
+          echo "## Security Audit" >> outdated-report.md
+          echo "" >> outdated-report.md
+          
+          if npm audit --audit-level=low --json > audit.json 2>&1; then
+            echo "No security vulnerabilities found! 🔒" >> outdated-report.md
+          else
+            VULNERABILITIES=$(cat audit.json | jq '.metadata.vulnerabilities.total // 0')
+            echo "Found $VULNERABILITIES vulnerabilities." >> outdated-report.md
+            echo "" >> outdated-report.md
+            echo "Run \`npm audit\` for details." >> outdated-report.md
+          fi
+
+      - name: Create Issue for Outdated Dependencies
+        uses: actions/create-issue@v2
+        if: failure()
+        with:
+          assignees: ${{ github.actor }}
+          name: "Dependency Update Required"
+          about: "Automated dependency check found issues"
+          title: "🔄 Dependencies need attention - $(date +'%Y-%m-%d')"
+          body-file: outdated-report.md 
