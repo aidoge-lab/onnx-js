@@ -1,4 +1,4 @@
-# JSONNX Parser
+# ONNX-JS Parser
 
 A high-quality ONNX model parser built with TypeScript, featuring clean architecture design and high readability.
 
@@ -14,13 +14,13 @@ A high-quality ONNX model parser built with TypeScript, featuring clean architec
 ## Installation
 
 ```bash
-npm install jsonnx-parser
+npm install onnx-js-parser
 ```
 
 ## Quick Start
 
 ```typescript
-import { OnnxParser } from 'jsonnx-parser';
+import { OnnxParser } from 'onnx-js-parser';
 
 // Parse ONNX model
 const parser = new OnnxParser();
@@ -84,7 +84,7 @@ interface NetworkModel {
 The project provides a complete error handling mechanism:
 
 ```typescript
-import { ParserError, ParserErrorType } from 'jsonnx-parser';
+import { ParserError, ParserErrorType } from 'onnx-js-parser';
 
 try {
   const model = await parser.parse(buffer);
@@ -148,7 +148,7 @@ npm run format
 ## Project Structure
 
 ```
-jsonnx-parser/
+onnx-js-parser/
 ├── src/
 │   ├── core/           # Core data types
 │   ├── parser/         # Parser interface and error handling

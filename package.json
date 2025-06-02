@@ -1,5 +1,5 @@
 {
-  "name": "jsonnx-parser",
+  "name": "onnx-js-parser",
   "version": "1.0.0",
   "description": "A TypeScript-based ONNX model parser with clean architecture and high readability",
   "main": "dist/index.js",
@@ -61,10 +61,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/jsonnx-parser.git"
+    "url": "https://github.com/yourusername/onnx-js-parser.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/jsonnx-parser/issues"
+    "url": "https://github.com/yourusername/onnx-js-parser/issues"
   },
-  "homepage": "https://github.com/yourusername/jsonnx-parser#readme"
+  "homepage": "https://github.com/yourusername/onnx-js-parser#readme"
 } 

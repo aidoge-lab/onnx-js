@@ -303,7 +303,7 @@ Through the adapter pattern, support for other model formats can be easily added
 ## Usage Example
 
 ```typescript
-import { OnnxParser } from 'jsonnx-parser';
+import { OnnxParser } from 'onnx-js-parser';
 
 // Parse ONNX model
 const parser = new OnnxParser();
