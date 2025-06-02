@@ -2,7 +2,7 @@
   "name": "onnx-js-parser",
   "version": "1.0.0",
   "description": "A TypeScript-based ONNX model parser with clean architecture and high readability",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "type": "module",

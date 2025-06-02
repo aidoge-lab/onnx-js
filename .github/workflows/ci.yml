@@ -87,7 +87,7 @@ jobs:
 
       - name: Check build artifacts
         run: |
-          test -f dist/index.js
+          test -f dist/index.cjs
           test -f dist/index.esm.js
           test -f dist/index.d.ts
 
@@ -121,7 +121,7 @@ jobs:
         run: npm ci --only=production
 
       - name: Test package import (CommonJS)
-        run: node -e "const pkg = require('./dist/index.js'); console.log('CommonJS import successful');"
+        run: node -e "const pkg = require('./dist/index.cjs'); console.log('CommonJS import successful');"
 
       - name: Test package import (ES Modules)
         run: node -e "import('./dist/index.esm.js').then(() => console.log('ES Module import successful'));"

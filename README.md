@@ -1,9 +1,9 @@
 # ONNX-JS Parser
 
-[![CI](https://github.com/yourusername/onnx-js-parser/workflows/CI/badge.svg)](https://github.com/yourusername/onnx-js-parser/actions/workflows/ci.yml)
-[![Release](https://github.com/yourusername/onnx-js-parser/workflows/Release/badge.svg)](https://github.com/yourusername/onnx-js-parser/actions/workflows/release.yml)
+[![CI](https://github.com/aidoge-lab/onnx-js-parser/workflows/CI/badge.svg)](https://github.com/aidoge-lab/onnx-js-parser/actions/workflows/ci.yml)
+[![Release](https://github.com/aidoge-lab/onnx-js-parser/workflows/Release/badge.svg)](https://github.com/aidoge-lab/onnx-js-parser/actions/workflows/release.yml)
 [![npm version](https://badge.fury.io/js/onnx-js-parser.svg)](https://badge.fury.io/js/onnx-js-parser)
-[![codecov](https://codecov.io/gh/yourusername/onnx-js-parser/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/onnx-js-parser)
+[![codecov](https://codecov.io/gh/aidoge-lab/onnx-js-parser/branch/main/graph/badge.svg)](https://codecov.io/gh/aidoge-lab/onnx-js-parser)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/onnx-js-parser.svg)](https://nodejs.org/)
 
